@@ -1,5 +1,5 @@
 {
-  "name": "fp-utility",
+  "name": "fp-utility-light",
   "version": "1.0.0",
   "description": "FP utility functions",
   "main": "index.js",
@@ -12,7 +12,10 @@
     "url": "https://github.com/omrfrks/FP-utility.git"
   },
   "keywords": [
-    "fp"
+    "fp",
+    "functional",
+    "programming",
+    "utility"
   ],
   "author": "omrfrks",
   "license": "MIT",
