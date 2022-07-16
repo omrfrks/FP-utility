@@ -4,7 +4,8 @@
   "description": "FP utility functions",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel index.js -d lib"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,10 @@
   "author": "omrfrks",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "eslint": "^8.19.0",
     "jest": "^28.1.3"
   }
 }

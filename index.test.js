@@ -1,8 +1,8 @@
 const FP = require('./index');
 
-getName = (person) => person.name
-uppercase = (string) => string.toUpperCase()
-reverse = (string) => string
+const getName = (person) => person.name
+const uppercase = (string) => string.toUpperCase()
+const reverse = (string) => string
 .split('')
 .reverse()
 .join('')

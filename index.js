@@ -1,18 +1,18 @@
-pipe = (...functions) => (value) => {
+const pipe = (...functions) => (value) => {
   return functions
     .reduce((currentValue, currentFunction) => {
        return currentFunction(currentValue);
     }, value)
 };
 
-compose = (...functions) => (value) => {
+const compose = (...functions) => (value) => {
   return functions
     .reduceRight((currentValue, currentFunction) => {
        return currentFunction(currentValue);
     }, value)
 };
 
-findPropIn = (propName,obj) => {
+const findPropIn = (propName,obj) => {
   if (obj == undefined || typeof obj != "object") return;
 
   if (propName in obj) {
