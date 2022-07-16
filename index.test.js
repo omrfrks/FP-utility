@@ -28,3 +28,7 @@ test('findPropIn with object', () => {
   expect(FP.findPropIn('school', { name: 'Test Name', education: {school: 'Test School'} })).toBe('Test School');
   expect(FP.findPropIn('age', { name: 'Test Name' })).toBe(undefined);
 });
+
+test('unary with map and parseInt', () => {
+  expect(["1","2","3"].map( FP.unary( parseInt ) )).toStrictEqual([1,2,3]);
+});
