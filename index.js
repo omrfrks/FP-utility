@@ -28,4 +28,9 @@ const findPropIn = (propName,obj) => {
   }
 }
 
-module.exports = {pipe, compose, findPropIn};
+const unary = (fn) => {
+  return function onlyOneArg(arg){
+      return fn( arg );
+  };
+}
+module.exports = {pipe, compose, findPropIn, unary};
