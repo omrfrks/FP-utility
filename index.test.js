@@ -6,6 +6,10 @@ const reverse = (string) => string
 .split('')
 .reverse()
 .join('')
+const sum = (x,y) => x + y
+const identity = (x) => x
+const foo = (fn) => fn( [ 3, 9 ] )
+const boo = (fn) => fn( 3, 9 )
 
 test('pipe TestString with getName,uppercase and reverse functions', () => {
   expect(FP.pipe(
@@ -31,4 +35,12 @@ test('findPropIn with object', () => {
 
 test('unary with map and parseInt', () => {
   expect(["1","2","3"].map( FP.unary( parseInt ) )).toStrictEqual([1,2,3]);
+});
+
+test('spreadArgs', () => {
+  expect(foo(FP.spreadArgs(sum))).toBe(12);
+});
+
+test('gatherArgs', () => {
+  expect(boo(FP.gatherArgs(identity))).toStrictEqual([3,9]);
 });

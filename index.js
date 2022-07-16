@@ -33,4 +33,17 @@ const unary = (fn) => {
       return fn( arg );
   };
 }
-module.exports = {pipe, compose, findPropIn, unary};
+
+const spreadArgs = (fn) => {
+  return function spreadFn(argsArr){
+      return fn(...argsArr);
+  };
+};
+
+const gatherArgs = (fn) => {
+  return function spreadFn(...argsArr){
+      return fn(argsArr);
+  };
+};
+
+module.exports = {pipe, compose, findPropIn, unary, spreadArgs, gatherArgs};
