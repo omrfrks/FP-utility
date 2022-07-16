@@ -1,4 +1,4 @@
-const FP = require('./index');
+const FP = require('./lib/index');
 
 const getName = (person) => person.name
 const uppercase = (string) => string.toUpperCase()
