@@ -4,7 +4,7 @@
   "description": "FP utility functions",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,8 @@
     "fp"
   ],
   "author": "omrfrks",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }
