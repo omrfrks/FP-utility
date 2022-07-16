@@ -1,13 +1,13 @@
 const FP = require('./index');
 
-test('pipe TestString with getName,uppercase and reverse functions', () => {
-  getName = (person) => person.name
-  uppercase = (string) => string.toUpperCase()
-  reverse = (string) => string
-  .split('')
-  .reverse()
-  .join('')
+getName = (person) => person.name
+uppercase = (string) => string.toUpperCase()
+reverse = (string) => string
+.split('')
+.reverse()
+.join('')
 
+test('pipe TestString with getName,uppercase and reverse functions', () => {
   expect(FP.pipe(
     getName,
     uppercase,
@@ -15,18 +15,16 @@ test('pipe TestString with getName,uppercase and reverse functions', () => {
   )({ name: 'TestString' })).toBe('GNIRTSTSET');
 });
 
-
 test('compose TestString with reverse,uppercase and getName functions', () => {
-  getName = (person) => person.name
-  uppercase = (string) => string.toUpperCase()
-  reverse = (string) => string
-  .split('')
-  .reverse()
-  .join('')
-
   expect(FP.compose(
     reverse,
     uppercase,
     getName
   )({ name: 'TestString' })).toBe('GNIRTSTSET');
+});
+
+test('findPropIn with object', () => {
+  expect(FP.findPropIn('name', { name: 'Test Name' })).toBe('Test Name');
+  expect(FP.findPropIn('school', { name: 'Test Name', education: {school: 'Test School'} })).toBe('Test School');
+  expect(FP.findPropIn('age', { name: 'Test Name' })).toBe(undefined);
 });

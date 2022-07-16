@@ -12,4 +12,20 @@ compose = (...functions) => (value) => {
     }, value)
 };
 
-module.exports = {pipe, compose};
+findPropIn = (propName,obj) => {
+  if (obj == undefined || typeof obj != "object") return;
+
+  if (propName in obj) {
+      return obj[propName];
+  }
+  else {
+      for (let prop of Object.keys( obj )) {
+          let ret = findPropIn( propName, obj[prop] );
+          if (ret !== undefined) {
+              return ret;
+          }
+      }
+  }
+}
+
+module.exports = {pipe, compose, findPropIn};
