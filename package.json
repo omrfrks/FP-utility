@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git"
+    "url": "https://github.com/omrfrks/FP-utility.git"
   },
   "keywords": [
     "fp"
   ],
   "author": "omrfrks",
-  "license": "ISC"
+  "license": "MIT"
 }
